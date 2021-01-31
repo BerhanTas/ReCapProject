@@ -33,15 +33,21 @@ namespace DataAccess.Concrete.InMemory
                 _cars.Remove(carToDelete);
             }
 
-            public List<Car> GetAll()
-            {
-                return _cars;
-            }
+        public List<Car> GetAll()
+        {
+            return _cars;
+        }
 
-            public List<Car> GetAllByCategory(int categoryId)
+              public List<Car> GetAllByCategory(int categoryId)
             {
                 throw new NotImplementedException();
             }
+        public List<Car> GetById(int CarId)
+        {
+            return _cars.Where(c => c.CarId == CarId).ToList();
+                }
+
+
 
             public void Update(Car car)
             {
